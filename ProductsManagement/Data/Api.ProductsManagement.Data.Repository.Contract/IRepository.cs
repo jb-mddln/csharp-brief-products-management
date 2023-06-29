@@ -7,5 +7,7 @@
         Task<T?> GetById(int id);
 
         Task<T> Add(T entity);
+
+        Task<T> Remove(T entity);
     }
 }

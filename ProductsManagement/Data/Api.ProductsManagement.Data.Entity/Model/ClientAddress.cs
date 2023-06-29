@@ -14,9 +14,6 @@
 
         public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
 
-        public override string ToString()
-        {
-            return $"{Address}, {ZipCode} {City} {Country}";
-        }
+        public override string ToString() => $"{Address}, {ZipCode} {City} {Country}";
     }
 }

@@ -19,6 +19,11 @@ namespace Api.ProductsManagement.Data.Repository
             return await Entities.Include(client => client.Address).ToListAsync().ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// Return null or the client with the corresponding Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public override async Task<Client?> GetById(int id)
         {
             return await Entities.Include(client => client.Address).FirstOrDefaultAsync(client => client.Id == id).ConfigureAwait(false);

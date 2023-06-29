@@ -39,9 +39,11 @@ namespace Api.ProductsManagement.Application.Controllers
         }
 
         // DELETE api/<ValuesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{id}"), ProducesResponseType(typeof(IEnumerable<ReadClientDto>), 200)]
+        public async Task<ActionResult> Delete(int id)
         {
+            var elementDeleted = await _clientService.RemoveClientAsync(id).ConfigureAwait(false);
+            return Ok(elementDeleted);
         }
     }
 }

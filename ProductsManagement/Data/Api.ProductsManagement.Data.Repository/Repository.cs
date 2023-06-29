@@ -65,5 +65,13 @@ namespace Api.ProductsManagement.Data.Repository
 
             return elementAdded.Entity;
         }
+
+        public virtual async Task<T> Remove(T entity)
+        {
+            var elementDeleted = Entities.Remove(entity);
+            await _dbContext.SaveChangesAsync().ConfigureAwait(false);
+
+            return elementDeleted.Entity;
+        }
     }
 }

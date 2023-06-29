@@ -9,10 +9,12 @@ namespace Api.ProductsManagement.Business.Service
     public class ClientService : IClientService
     {
         private readonly IRepository<Client> _clientRepository;
+        private readonly IRepository<ClientAddress> _clientAddressRepository;
 
-        public ClientService(IRepository<Client> clientRepository)
+        public ClientService(IRepository<Client> clientRepository, IRepository<ClientAddress> clientAddressRepository)
         {
             _clientRepository = clientRepository;
+            _clientAddressRepository = clientAddressRepository;
         }
 
         public async Task<IEnumerable<ReadClientDto>> GetClientsAsync()
@@ -34,7 +36,7 @@ namespace Api.ProductsManagement.Business.Service
 
         public async Task<ReadClientDto> AddClientAsync(CreateClientDto clientDto)
         {
-            if(clientDto == null)
+            if (clientDto == null)
             {
                 throw new ArgumentNullException(nameof(clientDto));
             }
@@ -42,9 +44,23 @@ namespace Api.ProductsManagement.Business.Service
             var clientToAdd = ClientMapper.DtoToEntity(clientDto);
 
             var clientAdded = await _clientRepository.Add(clientToAdd).ConfigureAwait(false);
-
             return ClientMapper.EntityToDto(clientAdded);
+        }
 
+        public async Task<ReadClientDto> RemoveClientAsync(int id)
+        {
+            var client = await _clientRepository.GetById(id).ConfigureAwait(false);
+            if (client == null)
+            {
+                throw new Exception($"Client {id} not found.");
+            }
+
+            var clientDeleted = await _clientRepository.Remove(client).ConfigureAwait(false);
+            var addressDeleted = await _clientAddressRepository.Remove(clientDeleted.Address).ConfigureAwait(false);
+
+            // todo remove orders, reviews infos ?
+
+            return ClientMapper.EntityToDto(clientDeleted);
         }
     }
 }

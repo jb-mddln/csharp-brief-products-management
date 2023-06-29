@@ -9,5 +9,7 @@ namespace Api.ProductsManagement.Service.Contract
         Task<ReadClientDto> GetClientByIdAsync(int id);
 
         Task<ReadClientDto> AddClientAsync(CreateClientDto clientDto);
+
+        Task<ReadClientDto> RemoveClientAsync(int id);
     }
 }
