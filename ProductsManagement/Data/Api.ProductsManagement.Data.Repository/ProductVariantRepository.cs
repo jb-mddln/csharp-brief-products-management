@@ -3,9 +3,9 @@ using Api.ProductsManagement.Data.Entity.Model;
 
 namespace Api.ProductsManagement.Data.Repository
 {
-    public class ProductRepository : Repository<Product>
+    public class ProductVariantRepository : Repository<ProductVariant>
     {
-        public ProductRepository(IProductsManagementDBContext dbContext) : base(dbContext)
+        public ProductVariantRepository(IProductsManagementDBContext dbContext) : base(dbContext)
         {
         }
     }

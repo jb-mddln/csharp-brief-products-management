@@ -14,12 +14,12 @@
 
         public string? Image { get; set; }
 
-        public virtual ProductsCategory Category { get; set; } = null!;
+        public virtual ProductCategory Category { get; set; } = null!;
 
         public virtual ICollection<ClientOrder> ClientOrders { get; set; } = new List<ClientOrder>();
 
         public virtual ICollection<ClientReview> ClientReviews { get; set; } = new List<ClientReview>();
 
-        public virtual ICollection<ProductsVariant> ProductsVariants { get; set; } = new List<ProductsVariant>();
+        public virtual ICollection<ProductVariant> ProductsVariants { get; set; } = new List<ProductVariant>();
     }
 }

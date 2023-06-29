@@ -14,7 +14,7 @@
 
         public int AddressId { get; set; }
 
-        public virtual ClientsAddress Address { get; set; } = null!;
+        public virtual ClientAddress Address { get; set; } = null!;
 
         public virtual ICollection<ClientOrder> ClientOrders { get; set; } = new List<ClientOrder>();
 

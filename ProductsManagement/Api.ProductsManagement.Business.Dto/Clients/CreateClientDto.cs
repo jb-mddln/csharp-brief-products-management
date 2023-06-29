@@ -10,6 +10,6 @@
 
         public string Password { get; set; }
 
-        public int AddressId { get; set; }
+        public CreateClientAddressDto Address { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Api.ProductsManagement.Business.Service
 {
-    public class ProductsCategoryService : IProductsCategoryService
+    public class ClientAddressService : IClientAddressService
     {
 
     }
