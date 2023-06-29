@@ -1,6 +1,6 @@
 ﻿using Api.ProductsManagement.Data.Context.Contract;
 using Api.ProductsManagement.Data.Entity.Model;
-using Api.ProductsManagement.Data.Repository.Contract;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.ProductsManagement.Data.Repository
 {
@@ -8,6 +8,11 @@ namespace Api.ProductsManagement.Data.Repository
     {
         public ClientRepository(IProductsManagementDBContext dbContext) : base(dbContext)
         {
+        }
+
+        public override async Task<IEnumerable<Client>> GetAll()
+        {
+            return await Entities.Include(x => x.Address).ToListAsync().ConfigureAwait(false);
         }
     }
 }

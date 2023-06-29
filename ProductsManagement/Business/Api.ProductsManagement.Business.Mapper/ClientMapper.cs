@@ -16,5 +16,19 @@ namespace Api.ProductsManagement.Business.Mapper
                 AddressId = clientDto.AddressId
             };
         }
+
+        public static ReadClientDto EntityToDto(Client client)
+        {
+            return new ReadClientDto
+            {
+                Id = client.Id,
+                LastName = client.LastName,
+                FirstName = client.FirstName,
+                Email = client.Email,
+                Password = client.Password,
+                AddressId = client.AddressId,
+                Address = client.Address.ToString(),
+            };
+        }
     }
 }

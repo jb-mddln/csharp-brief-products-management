@@ -8,16 +8,16 @@ namespace Api.ProductsManagement.Data.Repository
     {
         private readonly IProductsManagementDBContext _dbContext;
 
-        protected DbSet<T> Items => _dbContext.Set<T>();
+        protected DbSet<T> Entities => _dbContext.Set<T>();
 
         protected Repository(IProductsManagementDBContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public virtual async Task<IEnumerable<T>> GetAll()
         {
-            return await Items.ToListAsync().ConfigureAwait(false);
+            return await Entities.ToListAsync().ConfigureAwait(false);
         }
     }
 }

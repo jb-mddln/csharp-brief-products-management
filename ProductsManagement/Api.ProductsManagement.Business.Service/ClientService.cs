@@ -1,4 +1,5 @@
 ﻿using Api.ProductsManagement.Business.Dto.Client;
+using Api.ProductsManagement.Business.Mapper;
 using Api.ProductsManagement.Data.Entity.Model;
 using Api.ProductsManagement.Data.Repository.Contract;
 using Api.ProductsManagement.Service.Contract;
@@ -18,7 +19,7 @@ namespace Api.ProductsManagement.Business.Service
         {
             var clients = await _clientRepository.GetAll().ConfigureAwait(false);
 
-            return Enumerable.Empty<ReadClientDto>();
+            return clients.Select(ClientMapper.EntityToDto);
         }
     }
 }

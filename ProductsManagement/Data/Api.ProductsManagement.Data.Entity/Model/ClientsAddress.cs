@@ -13,5 +13,10 @@
         public string Country { get; set; } = null!;
 
         public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
+
+        public override string ToString()
+        {
+            return $"{Address}, {ZipCode} {City} {Country}";
+        }
     }
 }
