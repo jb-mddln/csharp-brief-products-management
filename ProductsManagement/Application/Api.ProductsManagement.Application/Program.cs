@@ -1,10 +1,10 @@
 using Api.ProductsManagement.Business.Service;
+using Api.ProductsManagement.Business.Service.Contract;
 using Api.ProductsManagement.Data.Context;
 using Api.ProductsManagement.Data.Context.Contract;
 using Api.ProductsManagement.Data.Entity.Model;
 using Api.ProductsManagement.Data.Repository;
 using Api.ProductsManagement.Data.Repository.Contract;
-using Api.ProductsManagement.Service.Contract;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.ProductsManagement.Application

@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Api.ProductsManagement.Business.Dto\Api.ProductsManagement.Business.Dto.csproj" />
     <ProjectReference Include="..\..\Data\Api.ProductsManagement.Data.Entity\Api.ProductsManagement.Data.Entity.csproj" />
+    <ProjectReference Include="..\Api.ProductsManagement.Business.Dto\Api.ProductsManagement.Business.Dto.csproj" />
   </ItemGroup>
 
 </Project>

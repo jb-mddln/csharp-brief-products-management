@@ -1,8 +1,8 @@
 ﻿using Api.ProductsManagement.Business.Dto.Client;
 using Api.ProductsManagement.Business.Mapper;
+using Api.ProductsManagement.Business.Service.Contract;
 using Api.ProductsManagement.Data.Entity.Model;
 using Api.ProductsManagement.Data.Repository.Contract;
-using Api.ProductsManagement.Service.Contract;
 
 namespace Api.ProductsManagement.Business.Service
 {

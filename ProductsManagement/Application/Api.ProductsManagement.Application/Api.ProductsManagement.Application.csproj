@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Api.ProductsManagement.Business.Service\Api.ProductsManagement.Business.Service.csproj" />
+    <ProjectReference Include="..\..\Business\Api.ProductsManagement.Business.Dto\Api.ProductsManagement.Business.Dto.csproj" />
+    <ProjectReference Include="..\..\Business\Api.ProductsManagement.Business.Service.Contract\Api.ProductsManagement.Business.Service.Contract.csproj" />
+    <ProjectReference Include="..\..\Business\Api.ProductsManagement.Business.Service\Api.ProductsManagement.Business.Service.csproj" />
     <ProjectReference Include="..\..\Data\Api.ProductsManagement.Data.Context.Contract\Api.ProductsManagement.Data.Context.Contract.csproj" />
     <ProjectReference Include="..\..\Data\Api.ProductsManagement.Data.Context\Api.ProductsManagement.Data.Context.csproj" />
     <ProjectReference Include="..\..\Data\Api.ProductsManagement.Data.Repository.Contract\Api.ProductsManagement.Data.Repository.Contract.csproj" />

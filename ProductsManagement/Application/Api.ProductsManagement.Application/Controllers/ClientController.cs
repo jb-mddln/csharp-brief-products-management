@@ -1,5 +1,5 @@
 ﻿using Api.ProductsManagement.Business.Dto.Client;
-using Api.ProductsManagement.Service.Contract;
+using Api.ProductsManagement.Business.Service.Contract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.ProductsManagement.Application.Controllers

@@ -1,6 +1,6 @@
 ﻿using Api.ProductsManagement.Business.Dto.Client;
 
-namespace Api.ProductsManagement.Service.Contract
+namespace Api.ProductsManagement.Business.Service.Contract
 {
     public interface IClientService
     {

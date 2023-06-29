@@ -1,4 +1,4 @@
-﻿using Api.ProductsManagement.Service.Contract;
+﻿using Api.ProductsManagement.Business.Service.Contract;
 
 namespace Api.ProductsManagement.Business.Service
 {
