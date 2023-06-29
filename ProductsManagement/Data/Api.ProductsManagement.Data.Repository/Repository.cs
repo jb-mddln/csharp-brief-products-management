@@ -1,9 +1,10 @@
 ﻿using Api.ProductsManagement.Data.Context.Contract;
+using Api.ProductsManagement.Data.Repository.Contract;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.ProductsManagement.Data.Repository
 {
-    public class Repository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly IProductsManagementDBContext _dbContext;
 

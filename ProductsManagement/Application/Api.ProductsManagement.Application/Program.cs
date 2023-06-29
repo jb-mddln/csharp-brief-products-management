@@ -23,12 +23,12 @@ namespace Api.ProductsManagement.Application
             );
 
             builder.Services.AddScoped<IRepository<Client>, ClientRepository>();
-            builder.Services.AddScoped<IClientOrderRepository, ClientOrderRepository>();
-            builder.Services.AddScoped<IClientReviewRepository, ClientReviewRepository>();
-            builder.Services.AddScoped<IClientAddressRepository, ClientAddressRepository>();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
-            builder.Services.AddScoped<IProductsVariantRepository, ProductsVariantRepository>();
+            builder.Services.AddScoped<IRepository<ClientOrder>, ClientOrderRepository>();
+            builder.Services.AddScoped<IRepository<ClientReview>, ClientReviewRepository>();
+            builder.Services.AddScoped<IRepository<ClientsAddress>, ClientAddressRepository>();
+            builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
+            builder.Services.AddScoped<IRepository<ProductsCategory>, ProductCategoryRepository>();
+            builder.Services.AddScoped<IRepository<ProductsVariant>, ProductsVariantRepository>();
 
 
             builder.Services.AddScoped<IClientService, ClientService>();

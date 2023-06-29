@@ -1,14 +1,12 @@
 ﻿using Api.ProductsManagement.Data.Context.Contract;
+using Api.ProductsManagement.Data.Entity.Model;
 
 namespace Api.ProductsManagement.Data.Repository
 {
-    public class ProductCategoryRepository : IProductCategoryRepository
+    public class ProductCategoryRepository : Repository<ProductsCategory>
     {
-        private readonly IProductsManagementDBContext _dbContext;
-
-        public ProductCategoryRepository(IProductsManagementDBContext dbContext)
+        public ProductCategoryRepository(IProductsManagementDBContext dbContext) : base(dbContext)
         {
-            _dbContext = dbContext;
         }
     }
 }
