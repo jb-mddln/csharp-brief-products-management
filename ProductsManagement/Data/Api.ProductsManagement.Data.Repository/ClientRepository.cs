@@ -14,6 +14,14 @@ namespace Api.ProductsManagement.Data.Repository
         /// Return all the clients
         /// </summary>
         /// <returns>List of clients</returns>
-        public override async Task<IEnumerable<Client>> GetAll() => await Entities.Include(x => x.Address).ToListAsync().ConfigureAwait(false);
+        public override async Task<IEnumerable<Client>> GetAll()
+        {
+            return await Entities.Include(client => client.Address).ToListAsync().ConfigureAwait(false);
+        }
+
+        public override async Task<Client?> GetById(int id)
+        {
+            return await Entities.Include(client => client.Address).FirstOrDefaultAsync(client => client.Id == id).ConfigureAwait(false);
+        }
     }
 }

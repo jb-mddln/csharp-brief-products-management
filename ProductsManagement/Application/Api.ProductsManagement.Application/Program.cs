@@ -17,7 +17,10 @@ namespace Api.ProductsManagement.Application
             var configuration = builder.Configuration;
 
             // Add services to the container.
-            string connectionString = configuration.GetConnectionString("DatabaseConnection");
+            var connectionString = configuration.GetConnectionString("DatabaseConnection");
+            if (string.IsNullOrEmpty(connectionString))
+                throw new Exception("No connection string found api can't start");
+
             builder.Services.AddDbContext<IProductsManagementDBContext, ProductsManagementDBContext>(
                 options => options.UseNpgsql(connectionString)
             );
@@ -25,28 +28,25 @@ namespace Api.ProductsManagement.Application
             builder.Services.AddScoped<IRepository<Client>, ClientRepository>();
             builder.Services.AddScoped<IRepository<ClientOrder>, ClientOrderRepository>();
             builder.Services.AddScoped<IRepository<ClientReview>, ClientReviewRepository>();
-            builder.Services.AddScoped<IRepository<ClientsAddress>, ClientAddressRepository>();
+            builder.Services.AddScoped<IRepository<ClientAddress>, ClientAddressRepository>();
             builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
-            builder.Services.AddScoped<IRepository<ProductsCategory>, ProductCategoryRepository>();
-            builder.Services.AddScoped<IRepository<ProductsVariant>, ProductsVariantRepository>();
-
+            builder.Services.AddScoped<IRepository<ProductCategory>, ProductCategoryRepository>();
+            builder.Services.AddScoped<IRepository<ProductVariant>, ProductVariantRepository>();
 
             builder.Services.AddScoped<IClientService, ClientService>();
             builder.Services.AddScoped<IClientOrderService, ClientOrderService>();
             builder.Services.AddScoped<IClientReviewService, ClientReviewService>();
-            builder.Services.AddScoped<IClientsAddressService, ClientsAddressService>();
+            builder.Services.AddScoped<IClientAddressService, ClientAddressService>();
             builder.Services.AddScoped<IProductService, ProductService>();
-            builder.Services.AddScoped<IProductsCategoryService, ProductsCategoryService>();
-            builder.Services.AddScoped<IProductsVariantService, ProductsVariantService>();
+            builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
+            builder.Services.AddScoped<IProductVariantService, ProductVariantService>();
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -56,7 +56,6 @@ namespace Api.ProductsManagement.Application
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

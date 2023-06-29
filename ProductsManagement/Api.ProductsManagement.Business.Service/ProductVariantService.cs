@@ -2,7 +2,7 @@
 
 namespace Api.ProductsManagement.Business.Service
 {
-    public class ProductsVariantService : IProductsVariantService
+    public class ProductVariantService : IProductVariantService
     {
 
     }

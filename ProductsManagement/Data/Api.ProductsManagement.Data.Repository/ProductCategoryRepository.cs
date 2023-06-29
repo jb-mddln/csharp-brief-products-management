@@ -3,7 +3,7 @@ using Api.ProductsManagement.Data.Entity.Model;
 
 namespace Api.ProductsManagement.Data.Repository
 {
-    public class ProductCategoryRepository : Repository<ProductsCategory>
+    public class ProductCategoryRepository : Repository<ProductCategory>
     {
         public ProductCategoryRepository(IProductsManagementDBContext dbContext) : base(dbContext)
         {

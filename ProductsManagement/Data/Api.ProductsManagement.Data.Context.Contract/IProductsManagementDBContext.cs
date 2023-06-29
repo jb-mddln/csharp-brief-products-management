@@ -11,12 +11,12 @@ namespace Api.ProductsManagement.Data.Context.Contract
 
         DbSet<ClientReview> ClientReviews { get; set; }
 
-        DbSet<ClientsAddress> ClientsAddresses { get; set; }
+        DbSet<ClientAddress> ClientsAddresses { get; set; }
 
         DbSet<Product> Products { get; set; }
 
-        DbSet<ProductsCategory> ProductsCategories { get; set; }
+        DbSet<ProductCategory> ProductsCategories { get; set; }
 
-        DbSet<ProductsVariant> ProductsVariants { get; set; }
+        DbSet<ProductVariant> ProductsVariants { get; set; }
     }
 }

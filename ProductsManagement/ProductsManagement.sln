@@ -7,29 +7,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{AA015839-DDD8-4045-BBC6-1C207101520D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IOC", "IOC", "{4D60C2E2-BDC0-458B-8D34-8C858C707BCE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{963378A3-D901-471B-B02F-56A22A3EA39F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.ProductsManagement.Application", "Application\Api.ProductsManagement.Application\Api.ProductsManagement.Application.csproj", "{C9CA9CFC-B0BE-4B89-B412-09444D85939E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Application", "Application\Api.ProductsManagement.Application\Api.ProductsManagement.Application.csproj", "{C9CA9CFC-B0BE-4B89-B412-09444D85939E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.ProductsManagement.Data.Entity", "Data\Api.ProductsManagement.Data.Entity\Api.ProductsManagement.Data.Entity.csproj", "{F6AA2365-8081-4427-94AA-DEE58A2D58DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Data.Entity", "Data\Api.ProductsManagement.Data.Entity\Api.ProductsManagement.Data.Entity.csproj", "{F6AA2365-8081-4427-94AA-DEE58A2D58DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.ProductsManagement.Data.Context", "Data\Api.ProductsManagement.Data.Context\Api.ProductsManagement.Data.Context.csproj", "{3150D1F3-EA90-4029-9DC8-FF79099D36A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Data.Context", "Data\Api.ProductsManagement.Data.Context\Api.ProductsManagement.Data.Context.csproj", "{3150D1F3-EA90-4029-9DC8-FF79099D36A8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Data.Context.Contract", "Data\Api.ProductsManagement.Data.Context.Contract\Api.ProductsManagement.Data.Context.Contract.csproj", "{077AE462-67C1-4785-9936-3E6033F4CBDA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Data.Repository", "Data\Api.ProductsManagement.Data.Repository\Api.ProductsManagement.Data.Repository.csproj", "{1E5DFBBA-ED21-45F3-855C-BD3A0AC16381}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.ProductsManagement.Data.Repository.Contract", "Data\Api.ProductsManagement.Data.Repository.Contract\Api.ProductsManagement.Data.Repository.Contract.csproj", "{4FCF1ED0-5F1A-49B2-95EE-56BDD90B0261}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Data.Repository.Contract", "Data\Api.ProductsManagement.Data.Repository.Contract\Api.ProductsManagement.Data.Repository.Contract.csproj", "{4FCF1ED0-5F1A-49B2-95EE-56BDD90B0261}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.ProductsManagement.Business.Mapper", "Business\Api.ProductsManagement.Business.Mapper\Api.ProductsManagement.Business.Mapper.csproj", "{A7065F0D-76FA-4F8A-8CAF-3ADAE9AFCC84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Business.Mapper", "Business\Api.ProductsManagement.Business.Mapper\Api.ProductsManagement.Business.Mapper.csproj", "{A7065F0D-76FA-4F8A-8CAF-3ADAE9AFCC84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.ProductsManagement.Business.Service", "Api.ProductsManagement.Business.Service\Api.ProductsManagement.Business.Service.csproj", "{BD1AC2F0-C057-44BE-A362-02C438C7CCF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Business.Service", "Api.ProductsManagement.Business.Service\Api.ProductsManagement.Business.Service.csproj", "{BD1AC2F0-C057-44BE-A362-02C438C7CCF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.ProductsManagement.Business.Dto", "Api.ProductsManagement.Business.Dto\Api.ProductsManagement.Business.Dto.csproj", "{142B515A-1B0B-44DE-B4BF-413C7F8CD9EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Business.Dto", "Api.ProductsManagement.Business.Dto\Api.ProductsManagement.Business.Dto.csproj", "{142B515A-1B0B-44DE-B4BF-413C7F8CD9EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.ProductsManagement.Service.Contract", "Api.ProductsManagement.Service.Contract\Api.ProductsManagement.Service.Contract.csproj", "{5677E7F0-F5C3-4858-871F-0C3B21CD18CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.ProductsManagement.Service.Contract", "Api.ProductsManagement.Service.Contract\Api.ProductsManagement.Service.Contract.csproj", "{5677E7F0-F5C3-4858-871F-0C3B21CD18CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -51,5 +51,19 @@ namespace Api.ProductsManagement.Data.Repository
 
             return await Entities.FirstOrDefaultAsync(lambda).ConfigureAwait(false);
         }
+
+        public virtual async Task<T> Add(T entity)
+        {
+            // should not happen ?
+            if (entity.GetType() != typeof(T))
+            {
+                throw new InvalidOperationException("Invalid entity type");
+            }
+
+            var elementAdded = await Entities.AddAsync(entity).ConfigureAwait(false);
+            await _dbContext.SaveChangesAsync().ConfigureAwait(false);
+
+            return elementAdded.Entity;
+        }
     }
 }

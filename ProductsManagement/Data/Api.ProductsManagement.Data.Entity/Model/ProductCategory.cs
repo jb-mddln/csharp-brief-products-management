@@ -1,6 +1,6 @@
 ﻿namespace Api.ProductsManagement.Data.Entity.Model
 {
-    public class ProductsCategory
+    public class ProductCategory
     {
         public int Id { get; set; }
 

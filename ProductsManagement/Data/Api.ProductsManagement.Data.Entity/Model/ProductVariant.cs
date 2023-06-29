@@ -1,6 +1,6 @@
 ﻿namespace Api.ProductsManagement.Data.Entity.Model
 {
-    public class ProductsVariant
+    public class ProductVariant
     {
         public int Id { get; set; }
 

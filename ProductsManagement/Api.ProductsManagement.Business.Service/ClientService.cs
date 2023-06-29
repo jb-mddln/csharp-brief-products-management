@@ -18,7 +18,6 @@ namespace Api.ProductsManagement.Business.Service
         public async Task<IEnumerable<ReadClientDto>> GetClientsAsync()
         {
             var clients = await _clientRepository.GetAll().ConfigureAwait(false);
-
             return clients.Select(ClientMapper.EntityToDto);
         }
 
@@ -31,6 +30,21 @@ namespace Api.ProductsManagement.Business.Service
             }
 
             return ClientMapper.EntityToDto(client);
+        }
+
+        public async Task<ReadClientDto> AddClientAsync(CreateClientDto clientDto)
+        {
+            if(clientDto == null)
+            {
+                throw new ArgumentNullException(nameof(clientDto));
+            }
+
+            var clientToAdd = ClientMapper.DtoToEntity(clientDto);
+
+            var clientAdded = await _clientRepository.Add(clientToAdd).ConfigureAwait(false);
+
+            return ClientMapper.EntityToDto(clientAdded);
+
         }
     }
 }

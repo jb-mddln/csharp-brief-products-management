@@ -1,6 +1,6 @@
 ﻿namespace Api.ProductsManagement.Data.Entity.Model
 {
-    public class ClientsAddress
+    public class ClientAddress
     {
         public int Id { get; set; }
 

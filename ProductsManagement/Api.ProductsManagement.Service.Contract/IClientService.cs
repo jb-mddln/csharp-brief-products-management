@@ -7,5 +7,7 @@ namespace Api.ProductsManagement.Service.Contract
         Task<IEnumerable<ReadClientDto>> GetClientsAsync();
 
         Task<ReadClientDto> GetClientByIdAsync(int id);
+
+        Task<ReadClientDto> AddClientAsync(CreateClientDto clientDto);
     }
 }

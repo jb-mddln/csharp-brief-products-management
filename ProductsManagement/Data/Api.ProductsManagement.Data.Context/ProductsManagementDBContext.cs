@@ -21,13 +21,13 @@ namespace Api.ProductsManagement.Data.Context
 
         public virtual DbSet<ClientReview> ClientReviews { get; set; }
 
-        public virtual DbSet<ClientsAddress> ClientsAddresses { get; set; }
+        public virtual DbSet<ClientAddress> ClientsAddresses { get; set; }
 
         public virtual DbSet<Product> Products { get; set; }
 
-        public virtual DbSet<ProductsCategory> ProductsCategories { get; set; }
+        public virtual DbSet<ProductCategory> ProductsCategories { get; set; }
 
-        public virtual DbSet<ProductsVariant> ProductsVariants { get; set; }
+        public virtual DbSet<ProductVariant> ProductsVariants { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -116,7 +116,7 @@ namespace Api.ProductsManagement.Data.Context
                     .HasConstraintName("client_reviews_product_id_fkey");
             });
 
-            modelBuilder.Entity<ClientsAddress>(entity =>
+            modelBuilder.Entity<ClientAddress>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("clients_addresses_pkey");
 
@@ -158,7 +158,7 @@ namespace Api.ProductsManagement.Data.Context
                     .HasConstraintName("products_category_id_fkey");
             });
 
-            modelBuilder.Entity<ProductsCategory>(entity =>
+            modelBuilder.Entity<ProductCategory>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("products_categories_pkey");
 
@@ -171,7 +171,7 @@ namespace Api.ProductsManagement.Data.Context
                     .HasColumnName("name");
             });
 
-            modelBuilder.Entity<ProductsVariant>(entity =>
+            modelBuilder.Entity<ProductVariant>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("products_variants_pkey");
 
