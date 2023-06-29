@@ -2,8 +2,6 @@
 using Api.ProductsManagement.Service.Contract;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Api.ProductsManagement.Application.Controllers
 {
     [Route("api/[controller]")]
@@ -19,28 +17,19 @@ namespace Api.ProductsManagement.Application.Controllers
 
         // GET: api/<ValuesController>
         [HttpGet]
+        [Produces("application/json")]
         [ProducesResponseType(typeof(IEnumerable<ReadClientDto>), 200)]
-        public async Task<ActionResult> GetClientsAsync()
-        {
-            try
-            {
-                var clientsDto = await _clientService.GetClientsAsync();
-                return Ok(clientsDto);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-           
-            
-        }
+        public async Task<ActionResult> GetClientsAsync() 
+            => Ok(await _clientService.GetClientsAsync());
+       
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(ReadClientDto), 200)]
+        public async Task<ActionResult> Get(int id)
         {
-            return "value";
+            return Ok(await _clientService.GetClientByIdAsync(id));
         }
 
         // POST api/<ValuesController>

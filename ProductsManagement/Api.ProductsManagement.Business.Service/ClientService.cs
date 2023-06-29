@@ -21,5 +21,16 @@ namespace Api.ProductsManagement.Business.Service
 
             return clients.Select(ClientMapper.EntityToDto);
         }
+
+        public async Task<ReadClientDto> GetClientByIdAsync(int id)
+        {
+            var client = await _clientRepository.GetById(id).ConfigureAwait(false);
+            if (client == null)
+            {
+                throw new Exception($"Client {id} not found.");
+            }
+
+            return ClientMapper.EntityToDto(client);
+        }
     }
 }

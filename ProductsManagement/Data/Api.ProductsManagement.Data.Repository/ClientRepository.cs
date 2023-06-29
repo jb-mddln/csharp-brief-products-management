@@ -10,9 +10,10 @@ namespace Api.ProductsManagement.Data.Repository
         {
         }
 
-        public override async Task<IEnumerable<Client>> GetAll()
-        {
-            return await Entities.Include(x => x.Address).ToListAsync().ConfigureAwait(false);
-        }
+        /// <summary>
+        /// Return all the clients
+        /// </summary>
+        /// <returns>List of clients</returns>
+        public override async Task<IEnumerable<Client>> GetAll() => await Entities.Include(x => x.Address).ToListAsync().ConfigureAwait(false);
     }
 }
