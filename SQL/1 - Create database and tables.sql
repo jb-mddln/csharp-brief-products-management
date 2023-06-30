@@ -84,7 +84,7 @@ CREATE TABLE client_orders
 	product_id INT NOT NULL,
 	product_variant_id INT DEFAULT -1,
 	quantity INT NOT NULL DEFAULT 1,
-    statut SMALLINT DEFAULT -1,
+    status SMALLINT DEFAULT -1,
 	FOREIGN KEY (client_id) REFERENCES clients(id),
 	FOREIGN KEY (product_id) REFERENCES products(id)
 );
