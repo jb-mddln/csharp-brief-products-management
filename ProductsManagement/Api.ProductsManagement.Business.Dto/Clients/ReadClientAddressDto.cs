@@ -1,4 +1,4 @@
-﻿namespace Api.ProductsManagement.Business.Dto.Clients
+﻿namespace Api.ProductsManagement.Business.Dto.Client
 {
     public class ReadClientAddressDto
     {

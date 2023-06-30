@@ -1,5 +1,4 @@
 ﻿using Api.ProductsManagement.Business.Dto.Client;
-using Api.ProductsManagement.Business.Dto.Clients;
 using Api.ProductsManagement.Data.Entity.Model;
 
 namespace Api.ProductsManagement.Business.Mapper
