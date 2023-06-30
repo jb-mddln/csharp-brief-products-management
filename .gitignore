@@ -401,3 +401,5 @@ explication du use case.txt
 command for model & dbContext gen.txt
 gestion de magasin.lo1
 gestion de magasin.loo
+*.loo
+*.lo1

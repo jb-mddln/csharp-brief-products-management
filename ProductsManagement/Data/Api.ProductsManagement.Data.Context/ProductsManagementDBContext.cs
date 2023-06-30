@@ -73,7 +73,7 @@ namespace Api.ProductsManagement.Data.Context
                 entity.Property(e => e.Quantity)
                     .HasDefaultValueSql("1")
                     .HasColumnName("quantity");
-                entity.Property(e => e.Statut)
+                entity.Property(e => e.Status)
                     .HasDefaultValueSql("'-1'::integer")
                     .HasColumnName("statut");
 

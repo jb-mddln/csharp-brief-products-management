@@ -12,7 +12,7 @@
 
         public int Quantity { get; set; }
 
-        public short? Statut { get; set; }
+        public byte? Status { get; set; }
 
         public virtual Client Client { get; set; } = null!;
 
