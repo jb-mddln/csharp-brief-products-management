@@ -1,10 +1,12 @@
-﻿namespace Api.ProductsManagement.Data.Repository.Contract
+﻿using System.Linq.Expressions;
+
+namespace Api.ProductsManagement.Data.Repository.Contract
 {
     public interface IRepository<T> where T : class
     {
-        Task<IEnumerable<T>> GetAll();
+        Task<IEnumerable<T>> GetAll(params Expression<Func<T, object>>[] includes);
 
-        Task<T?> GetById(int id);
+        Task<T?> GetById(int id, params Expression<Func<T, object>>[] includes);
 
         Task<T> Add(T entity);
 

@@ -18,14 +18,14 @@ namespace Api.ProductsManagement.Business.Service
         }
 
         public async Task<IEnumerable<ReadClientDto>> GetClientsAsync()
-        {
-            var clients = await _clientRepository.GetAll().ConfigureAwait(false);
+        { 
+            var clients = await _clientRepository.GetAll(client => client.Address).ConfigureAwait(false);
             return clients.Select(ClientMapper.EntityToDto);
         }
 
         public async Task<ReadClientDto> GetClientByIdAsync(int id)
         {
-            var client = await _clientRepository.GetById(id).ConfigureAwait(false);
+            var client = await _clientRepository.GetById(id, client => client.Address).ConfigureAwait(false);
             if (client == null)
             {
                 throw new Exception($"Client {id} not found.");
