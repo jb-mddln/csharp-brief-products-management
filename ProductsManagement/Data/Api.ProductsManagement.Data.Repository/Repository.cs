@@ -21,21 +21,27 @@ namespace Api.ProductsManagement.Data.Repository
         }
 
         /// <summary>
-        /// Return all the entities of type T, can be override to add Include
+        /// Return all the entities of type T, can pass Include with the includes parameter eg: 'GetAll(client => client.Address)'
         /// </summary>
         /// <returns>List of entities of type T</returns>
-        public virtual async Task<IEnumerable<T>> GetAll()
+        public async Task<IEnumerable<T>> GetAll(params Expression<Func<T, object>>[] includes)
         {
-            return await Entities.ToListAsync().ConfigureAwait(false);
+            var query = Entities.AsQueryable();
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+
+            return await query.ToListAsync().ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Return null or the entity of type T with the corresponding Id
+        /// Return null or the entity of type T with the corresponding Id, can pass Include with the includes parameter eg: 'GetById(1, client => client.Address)'
         /// </summary>
         /// <param name="id">Id of the entity</param>
         /// <returns>Entity of type T</returns>
         /// <exception cref="InvalidOperationException">Throw InvalidOperationException if entity of type T does not have a Id property</exception>
-        public virtual async Task<T?> GetById(int id)
+        public async Task<T?> GetById(int id, params Expression<Func<T, object>>[] includes)
         {
             var idProperty = typeof(T).GetProperty("Id");
             if (idProperty == null)
@@ -49,10 +55,22 @@ namespace Api.ProductsManagement.Data.Repository
 
             var lambda = Expression.Lambda<Func<T, bool>>(equality, parameter);
 
-            return await Entities.FirstOrDefaultAsync(lambda).ConfigureAwait(false);
+            var query = Entities.AsQueryable();
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+
+            return await query.FirstOrDefaultAsync(lambda).ConfigureAwait(false);
         }
 
-        public virtual async Task<T> Add(T entity)
+        /// <summary>
+        /// Add entity of type T to the database
+        /// </summary>
+        /// <param name="entity">Entity of type T</param>
+        /// <returns>Entity of type T</returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        public async Task<T> Add(T entity)
         {
             // should not happen ?
             if (entity.GetType() != typeof(T))
@@ -66,7 +84,12 @@ namespace Api.ProductsManagement.Data.Repository
             return elementAdded.Entity;
         }
 
-        public virtual async Task<T> Remove(T entity)
+        /// <summary>
+        /// Remove entity of type T from the database
+        /// </summary>
+        /// <param name="entity">Entity of type T</param>
+        /// <returns>Entity of type T</returns>
+        public async Task<T> Remove(T entity)
         {
             var elementDeleted = Entities.Remove(entity);
             await _dbContext.SaveChangesAsync().ConfigureAwait(false);
