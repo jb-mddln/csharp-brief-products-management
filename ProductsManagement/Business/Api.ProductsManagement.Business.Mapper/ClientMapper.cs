@@ -3,6 +3,9 @@ using Api.ProductsManagement.Data.Entity.Model;
 
 namespace Api.ProductsManagement.Business.Mapper
 {
+    /// <summary>
+    /// Class for mapping Client entity and his associated entities
+    /// </summary>
     public static class ClientMapper
     {
         #region client

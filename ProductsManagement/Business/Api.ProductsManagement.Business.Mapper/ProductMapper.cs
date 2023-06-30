@@ -3,6 +3,9 @@ using Api.ProductsManagement.Data.Entity.Model;
 
 namespace Api.ProductsManagement.Business.Mapper
 {
+    /// <summary>
+    /// Class for mapping Product entity and his associated entities
+    /// </summary>
     public static class ProductMapper
     {
         #region Product
